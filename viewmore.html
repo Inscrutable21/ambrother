@@ -1,127 +1,239 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="html">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AM&Brothers</title>
-  <meta name="description" content="A.M&Brothers">
-  <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" href="assets/favicon/logo-gold-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="assets/favicon/logo-gold-16x16.png" sizes="16x16">
-  <link href="assets/favicon/logo-gold-96x96.png" rel="shortcut icon" type="image/x-icon">
-  <link href="assets/favicon/logo-gold-96x96.png" rel="icon" type="image/x-icon">
-  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/favicon/logo-gold-57x57.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/favicon/logo-gold-72x72.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/favicon/logo-gold-114x114.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/favicon/logo-gold-144x144.png">
-  <script type="module" src="./js/translation.js"></script>
-  <script type="module" src="./js/changeLanguage.js"></script>
-  <script type="module" src="./js/theme-switcher.js"></script>
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>Gallery Layout</title>
   <style>
-    .whatsapp_main{
-     position:fixed;
-     bottom: 10px;
-     right: 20px;
-     text-align: right;
-     z-index: 10;
-     
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #ffffff;
     }
-    .row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
 
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
-}
+    .gallery-container {
+      width: 100%;
+      max-width: 100vw;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #1a1a1a;
+    }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      width: 100%;
+    }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+    .image-block {
+      position: relative;
+      width: 100%;
+      padding-bottom: 133.33%;
+      background-color: #2d2d2d;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
+    .image-block:hover {
+      transform: scale(1.02);
+    }
+
+    .image-block img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ffffff;
+    }
+
+    .section-title span {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+      border-radius: 3px;
+    }
+
+    @media (max-width: 1200px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-container {
+        padding: 10px;
+      }
+    }
   </style>
-  <body class="body" data-theme="body">
-
-    <!--============ Header ============-->
-    <div class="whatsapp_main">
-  <a href=" https://wa.me/7071211597" target="_blank"><img src="whatsapp-logo-1.png" width="50vw" class="whatsapp_img"></a>
+</head>
+<body>
+  <div class="gallery-container">
+    <h2 class="section-title"><span>Gallery</span></h2>
+    <div class="gallery-grid">
+      <div class="image-block">
+        <img src="./assets/img/All/1.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="./assets/img/All/2.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/3.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/4.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/5.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/6.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_0576.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0003.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0004.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0005.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_0793.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_0794.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_0802.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_0813.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_1031.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_1044.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0028.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0029.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0031.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0034.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_2464.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_2706.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_9111.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/DSC_9124.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_2438e08e.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_eeabf319.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_f96a656e.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0006.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0007.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0008.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/11.JPG" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/12.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/13.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/14.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/15.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="/assets/img/All/16.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0009.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0010.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0011.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0012.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0013.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0021.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0023.jpg" alt="Gallery image">
+      </div>
+      <div class="image-block">
+        <img src="assets/img/All/IMG-20250204-WA0036.jpg" alt="Gallery image">
+      </div>
+    </div>
   </div>
-    <header class="header">
-      <div class="container container-header" data-theme="container-header">
-        <a class="logo" href="index.html" title="Portfolio logo. Click on it to return to the heading" data-theme="logo"></a>
-        
-      <!-- /.container-header -->
-  
-    </header>
-    <section class="portfolio section" id="portfolio">
-        <div class="container">
-
-          <h2 class="section-title" data-theme="section-title"><span >Gallery</span></h2>
-          <!-- /.section-title -->
-          <div class="row"> 
-            <div class="column">
-              <img src="./assets/img/All/1.jpg" style="width:100%">
-              <img src="./assets/img/All/2.jpg" style="width:100%">
-              <img src="/assets/img/All/3.jpg" style="width:100%">
-              <img src="/assets/img/All/4.jpg" style=width:100%>
-              <img src="/assets/img/All/5.jpg" style="width:100%">
-              <img src="/assets/img/All/6.jpg" style="width:100%">
-              <img src="/assets/img/All/DSC_0576.JPG" style="width:100%">
-            </div>
-            
-            <div class="column">
-              <img src="/assets/img/All/DSC_0793.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_0794.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_0802.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_0813.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_1031.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_1044.JPG" style="width:100%">
-            </div> 
-             
-            <div class="column">
-              <img src="/assets/img/All/DSC_2464.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_2706.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_9111.JPG" style="width:100%">
-              <img src="/assets/img/All/DSC_9124.JPG" style="width:100%">
-              <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_2438e08e.jpg" style="width:100%">
-              <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_eeabf319.jpg" style="width:100%">
-              <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_f96a656e.jpg" style="width:100%">
-            </div>
-            
-            <div class="column">
-              <img src="/assets/img/All/11.JPG" style="width:100%">
-              <img src="/assets/img/All/12.jpg" style="width:100%">
-              <img src="/assets/img/All/13.jpg" style="width:100%">
-              <img src="/assets/img/All/14.jpg" style="width:100%">
-              <img src="/assets/img/All/15.jpg" style="width:100%">
-              <img src="/assets/img/All/16.jpg" style="width:100%">
-            </div>
-          </div>
-          
-            <!-- /.container -->
-          </section>
 </body>
-    </html>
+</html>
