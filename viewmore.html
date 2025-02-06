@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gallery Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimized Gallery Layout</title>
   <style>
     body {
       margin: 0;
@@ -49,6 +50,32 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .image-block img.loaded {
+      opacity: 1;
+    }
+
+    .loading-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #2d2d2d 25%, #3d3d3d 50%, #2d2d2d 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
     }
 
     .section-title {
@@ -100,140 +127,115 @@
 <body>
   <div class="gallery-container">
     <h2 class="section-title"><span>Gallery</span></h2>
-    <div class="gallery-grid">
-      <div class="image-block">
-        <img src="./assets/img/All/1.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="./assets/img/All/2.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/3.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/4.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/5.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/6.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_0576.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0003.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0004.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0005.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_0793.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_0794.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_0802.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_0813.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_1031.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_1044.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0028.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0029.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0031.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0034.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_2464.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_2706.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_9111.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/DSC_9124.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_2438e08e.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_eeabf319.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_f96a656e.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0006.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0007.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0008.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/11.JPG" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/12.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/13.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/14.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/15.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="/assets/img/All/16.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0009.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0010.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0011.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0012.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0013.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0021.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0023.jpg" alt="Gallery image">
-      </div>
-      <div class="image-block">
-        <img src="assets/img/All/IMG-20250204-WA0036.jpg" alt="Gallery image">
-      </div>
-    </div>
+    <div class="gallery-grid" id="gallery"></div>
   </div>
+
+  <script>
+    // Complete image array with all gallery images
+    const images = [
+      './assets/img/All/1.jpg',
+      './assets/img/All/2.jpg',
+      '/assets/img/All/3.jpg',
+      '/assets/img/All/4.jpg',
+      '/assets/img/All/5.jpg',
+      '/assets/img/All/6.jpg',
+      '/assets/img/All/DSC_0576.JPG',
+      'assets/img/All/IMG-20250204-WA0003.jpg',
+      'assets/img/All/IMG-20250204-WA0004.jpg',
+      'assets/img/All/IMG-20250204-WA0005.jpg',
+      '/assets/img/All/DSC_0793.JPG',
+      '/assets/img/All/DSC_0794.JPG',
+      '/assets/img/All/DSC_0802.JPG',
+      '/assets/img/All/DSC_0813.JPG',
+      '/assets/img/All/DSC_1031.JPG',
+      '/assets/img/All/DSC_1044.JPG',
+      'assets/img/All/IMG-20250204-WA0028.jpg',
+      'assets/img/All/IMG-20250204-WA0029.jpg',
+      'assets/img/All/IMG-20250204-WA0031.jpg',
+      'assets/img/All/IMG-20250204-WA0034.jpg',
+      '/assets/img/All/DSC_2464.JPG',
+      '/assets/img/All/DSC_2706.JPG',
+      '/assets/img/All/DSC_9111.JPG',
+      '/assets/img/All/DSC_9124.JPG',
+      '/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_2438e08e.jpg',
+      '/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_eeabf319.jpg',
+      '/assets/img/All/WhatsApp Image 2024-05-18 at 16.47.57_f96a656e.jpg',
+      'assets/img/All/IMG-20250204-WA0006.jpg',
+      'assets/img/All/IMG-20250204-WA0007.jpg',
+      'assets/img/All/IMG-20250204-WA0008.jpg',
+      '/assets/img/All/11.JPG',
+      '/assets/img/All/12.jpg',
+      '/assets/img/All/13.jpg',
+      '/assets/img/All/14.jpg',
+      '/assets/img/All/15.jpg',
+      '/assets/img/All/16.jpg',
+      'assets/img/All/IMG-20250204-WA0009.jpg',
+      'assets/img/All/IMG-20250204-WA0010.jpg',
+      'assets/img/All/IMG-20250204-WA0011.jpg',
+      'assets/img/All/IMG-20250204-WA0012.jpg',
+      'assets/img/All/IMG-20250204-WA0013.jpg',
+      'assets/img/All/IMG-20250204-WA0021.jpg',
+      'assets/img/All/IMG-20250204-WA0023.jpg',
+      'assets/img/All/IMG-20250204-WA0036.jpg'
+    ];
+
+    // Function to create image blocks
+    function createImageBlock(src) {
+      const block = document.createElement('div');
+      block.className = 'image-block';
+      
+      const placeholder = document.createElement('div');
+      placeholder.className = 'loading-placeholder';
+      
+      const img = document.createElement('img');
+      img.alt = 'Gallery image';
+      
+      // Set up intersection observer for lazy loading
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            img.src = src;
+            img.onload = () => {
+              img.classList.add('loaded');
+              placeholder.remove();
+            };
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+      });
+
+      block.appendChild(placeholder);
+      block.appendChild(img);
+      observer.observe(block);
+      
+      return block;
+    }
+
+    // Function to initialize gallery
+    function initGallery() {
+      const gallery = document.getElementById('gallery');
+      const fragment = document.createDocumentFragment();
+
+      images.forEach(src => {
+        fragment.appendChild(createImageBlock(src));
+      });
+
+      gallery.appendChild(fragment);
+    }
+
+    // Initialize gallery when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initGallery);
+
+    // Add error handling for images
+    window.addEventListener('error', function(e) {
+      if (e.target.tagName === 'IMG') {
+        e.target.style.display = 'none';
+        e.target.parentElement.style.backgroundColor = '#3d3d3d';
+      }
+    }, true);
+  </script>
 </body>
 </html>
